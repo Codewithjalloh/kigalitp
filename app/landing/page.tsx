@@ -527,23 +527,23 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-white border-t border-gray-200 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            {/* Logo Section */}
             <div className="md:col-span-1">
-              <div className="flex items-center mb-6">
-                <div className="h-12 w-12 bg-gradient-to-r from-orange-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-xl">KT</span>
+              <div className="flex items-center mb-4">
+                <div className="h-10 w-10 bg-gradient-to-r from-orange-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md">
+                  <span className="text-white font-bold text-lg">KT</span>
                 </div>
                 <div className="ml-3">
-                  <h3 className="text-xl font-bold">Kigali Today Ltd</h3>
-                  <p className="text-gray-400 text-sm">Rwanda's Premier Media Group</p>
+                  <h3 className="text-lg font-bold text-gray-900">Kigali Today Ltd</h3>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed text-sm mb-6">
-                Rwanda's premier media group connecting communities through radio, print, and digital platforms with unmatched reach and influence.
+              <p className="text-gray-500 text-sm mb-6">
+                Rwanda's premier media group connecting communities through radio, print, and digital platforms.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-3">
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
                   <span className="text-white text-sm">📘</span>
                 </div>
@@ -559,62 +559,65 @@ export default function LandingPage() {
               </div>
             </div>
             
+            {/* Product */}
             <div>
-              <h4 className="text-lg font-bold mb-6 text-white">Partnership</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="/partnership" className="hover:text-white transition-colors text-sm">Multi-Platform Partnerships</a></li>
-                <li><a href="/partnership" className="hover:text-white transition-colors text-sm">Media Collaborations</a></li>
-                <li><a href="/partnership" className="hover:text-white transition-colors text-sm">Radio Partnerships</a></li>
-                <li><a href="/partnership" className="hover:text-white transition-colors text-sm">Community Initiatives</a></li>
+              <h4 className="text-sm font-bold text-gray-900 mb-4">Product</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="/partnership" className="hover:text-gray-900 transition-colors">Partnerships</a></li>
+                <li><a href="/advertising" className="hover:text-gray-900 transition-colors">Advertising</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Pricing</a></li>
               </ul>
             </div>
             
+            {/* Resources */}
             <div>
-              <h4 className="text-lg font-bold mb-6 text-white">Advertising</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li><a href="/advertising" className="hover:text-white transition-colors text-sm">Multi-Platform Packages</a></li>
-                <li><a href="/advertising" className="hover:text-white transition-colors text-sm">KT Radio Advertising</a></li>
-                <li><a href="/advertising" className="hover:text-white transition-colors text-sm">KT Press Advertising</a></li>
-                <li><a href="/advertising" className="hover:text-white transition-colors text-sm">Digital Advertising</a></li>
+              <h4 className="text-sm font-bold text-gray-900 mb-4">Resources</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">User guides</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Webinars</a></li>
               </ul>
             </div>
             
+            {/* Platform */}
             <div>
-              <h4 className="text-lg font-bold mb-6 text-white">Contact</h4>
-              <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center text-sm">
-                  <span className="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
-                  partnerships@kigalitoday.rw
-                </li>
-                <li className="flex items-center text-sm">
-                  <span className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
-                  advertising@kigalitoday.rw
-                </li>
-                <li className="flex items-center text-sm">
-                  <span className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
-                  press@kigalitoday.rw
-                </li>
-                <li className="flex items-center text-sm">
-                  <span className="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mr-3 text-xs">📞</span>
-                  +250 788 123 456
-                </li>
-                <li className="flex items-center text-sm">
-                  <span className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center mr-3 text-xs">📍</span>
-                  Kigali, Rwanda
-                </li>
+              <h4 className="text-sm font-bold text-gray-900 mb-4">Platform</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Partners & integrations</a></li>
+                <li><a href="/partnership" className="hover:text-gray-900 transition-colors">Become a partner</a></li>
+                <li><a href="#" className="hover:text-gray-900 transition-colors">Developer API</a></li>
+              </ul>
+            </div>
+            
+            {/* Company */}
+            <div>
+              <h4 className="text-sm font-bold text-gray-900 mb-4">Company</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><a href="#" className="hover:text-gray-900 transition-colors">About</a></li>
+                <li><a href="/register" className="hover:text-gray-900 transition-colors">Join us</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-700 mt-12 pt-8">
+          <div className="border-t border-gray-200 mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              <p className="text-gray-500 text-sm mb-4 md:mb-0">
                 © 2024 Kigali Today Ltd. All rights reserved.
               </p>
-              <div className="flex space-x-6 text-sm text-gray-400">
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-                <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+              <div className="flex items-center space-x-6">
+                <div className="flex space-x-4 text-sm text-gray-500">
+                  <a href="#" className="hover:text-gray-900 transition-colors">Privacy</a>
+                  <a href="#" className="hover:text-gray-900 transition-colors">Terms</a>
+                  <a href="#" className="hover:text-gray-900 transition-colors">Sitemap</a>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-sm text-gray-500">Language:</span>
+                  <select className="text-sm text-gray-700 bg-transparent border-none focus:outline-none">
+                    <option>English</option>
+                    <option>Kinyarwanda</option>
+                    <option>Français</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
