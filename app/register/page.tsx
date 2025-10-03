@@ -184,6 +184,7 @@ export default function RegisterPage() {
                   <option value="host">Radio Host</option>
                   <option value="manager">Manager</option>
                   <option value="admin">Administrator</option>
+                  <option value="radio">📻 Radio Operations</option>
                   <option value="partnership">🤝 Partnership Opportunities</option>
                   <option value="advertising">📢 Advertising Packages</option>
                 </select>

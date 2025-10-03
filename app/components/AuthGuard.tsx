@@ -27,8 +27,12 @@ export default function AuthGuard({ children }: AuthGuardProps) {
           router.push('/dashboard/partnership');
         } else if (userRole === 'advertising') {
           router.push('/dashboard/advertising');
+        } else if (userRole === 'admin') {
+          router.push('/dashboard/admin');
+        } else if (userRole === 'radio') {
+          router.push('/dashboard/radio');
         } else {
-          // Default dashboard for staff, host, manager, admin
+          // Default dashboard for staff, host, manager
           router.push('/dashboard');
         }
       } else {
