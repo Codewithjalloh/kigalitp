@@ -97,7 +97,7 @@ export default function LandingPage() {
             {/* Right Side - Visual */}
             <div className="relative">
               <div className="relative z-10">
-                {/* Main Figure */}
+                {/* Main Visual Container */}
                 <div className="relative">
                   <div className="w-80 h-96 mx-auto relative">
                     {/* Abstract Background Shapes */}
@@ -107,16 +107,18 @@ export default function LandingPage() {
                       <div className="absolute bottom-0 left-8 w-28 h-28 bg-purple-200 rounded-full"></div>
                     </div>
                     
-                    {/* Main Person */}
+                    {/* Main Professional Image */}
                     <div className="absolute top-16 left-1/2 transform -translate-x-1/2">
-                      <div className="w-48 h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center shadow-lg">
-                        <div className="w-40 h-40 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                          <span className="text-white text-4xl font-bold">KT</span>
-                        </div>
+                      <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                        <img 
+                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                          alt="Professional media executive" 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                     
-                    {/* Media Platform Cards */}
+                    {/* Media Platform Cards with Images */}
                     <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-3 border border-gray-200">
                       <div className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
@@ -244,6 +246,13 @@ export default function LandingPage() {
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
                   <span className="text-white text-3xl">📻</span>
                 </div>
+                <div className="w-full h-32 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg mb-4 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=200&fit=crop" 
+                    alt="Radio studio broadcasting" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-3">KT Radio</h3>
                 <p className="text-gray-600 text-lg font-medium">One of only 3 radio stations with 80%+ national coverage</p>
               </div>
@@ -294,6 +303,13 @@ export default function LandingPage() {
                 <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
                   <span className="text-white text-3xl">📰</span>
                 </div>
+                <div className="w-full h-32 bg-gradient-to-r from-green-100 to-green-200 rounded-lg mb-4 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=200&fit=crop" 
+                    alt="Newspaper and print media" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-3">KT Press</h3>
                 <p className="text-gray-600 text-lg font-medium">Premium print media reaching Rwanda's decision makers</p>
               </div>
@@ -343,6 +359,13 @@ export default function LandingPage() {
               <div className="text-center mb-8">
                 <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
                   <span className="text-white text-3xl">🌐</span>
+                </div>
+                <div className="w-full h-32 bg-gradient-to-r from-purple-100 to-purple-200 rounded-lg mb-4 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" 
+                    alt="Digital news website and analytics" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-3">kigalitoday.com</h3>
                 <p className="text-gray-600 text-lg font-medium">Dynamic news site in Kinyarwanda, Rwanda's national language</p>
@@ -436,8 +459,12 @@ export default function LandingPage() {
             {/* Left Side - Testimonial */}
             <div className="bg-gradient-to-r from-orange-100 to-pink-100 rounded-3xl p-8 shadow-lg">
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
-                  JK
+                <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg mr-4">
+                  <img 
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" 
+                    alt="Jean Kamanzi" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-gray-900">Jean Kamanzi</h4>
@@ -456,8 +483,12 @@ export default function LandingPage() {
             <div className="space-y-6">
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
-                    MU
+                  <div className="w-12 h-12 rounded-full overflow-hidden shadow-md mr-3">
+                    <img 
+                      src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" 
+                      alt="Marie Uwimana" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">Marie Uwimana</h4>
@@ -474,8 +505,12 @@ export default function LandingPage() {
 
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
-                    PN
+                  <div className="w-12 h-12 rounded-full overflow-hidden shadow-md mr-3">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" 
+                      alt="Paul Nkurunziza" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">Paul Nkurunziza</h4>
