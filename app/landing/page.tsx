@@ -11,103 +11,227 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-100 sticky top-0 z-50">
+      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+          <div className="flex justify-between items-center py-4">
             <div className="flex items-center group">
-              <div className="h-14 w-14 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <span className="text-white font-bold text-2xl">KT</span>
+              <div className="h-12 w-12 bg-gradient-to-r from-orange-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
+                <span className="text-white font-bold text-xl">KT</span>
               </div>
-              <div className="ml-4">
-                <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Kigali Today Ltd</h1>
-                <p className="text-sm text-gray-600 font-medium">Rwanda's Premier Media Group</p>
+              <div className="ml-3">
+                <h1 className="text-xl font-bold text-gray-900 tracking-tight">Kigali Today Ltd</h1>
+                <p className="text-xs text-gray-600 font-medium">Rwanda's Premier Media Group</p>
               </div>
             </div>
             <div className="flex space-x-4">
               <Link
                 href="/login"
-                className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:bg-blue-50"
+                className="text-gray-700 hover:text-blue-600 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-50"
               >
-                Staff Portal
+                Sign in
               </Link>
-                  <Link
-                    href="/register"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                  >
-                    Join Us
-                  </Link>
+              <Link
+                href="/register"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                Join Us
+              </Link>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="mb-8">
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-semibold mb-6">
-              🇷🇼 Rwanda's Leading Media Ecosystem
-            </span>
+      {/* Announcement Banner */}
+      <div className="bg-gradient-to-r from-orange-100 to-pink-100 border-b border-orange-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div className="text-center">
+            <p className="text-sm text-orange-800 font-medium">
+              🚀 Elevate your brand with Rwanda's most comprehensive media reach! Partner with Kigali Today Ltd for unmatched 80% national coverage across radio, print, and digital platforms. 
+              <span className="font-semibold"> Click to discover our partnership opportunities!</span>
+            </p>
           </div>
-          <h1 className="text-6xl md:text-8xl font-bold text-gray-900 mb-8 leading-tight">
-            Partner with{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent animate-pulse">
-              Kigali Today Ltd
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-5xl mx-auto leading-relaxed font-light">
-            Reach Rwanda's most engaged audience across <span className="font-semibold text-blue-600">radio</span>, <span className="font-semibold text-green-600">print</span>, and <span className="font-semibold text-purple-600">digital</span> platforms. 
-            Join leading brands who trust Kigali Today's comprehensive media ecosystem to amplify their message nationwide.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Link
-              href="/partnership"
-              className="px-10 py-5 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-green-600 to-blue-600 text-white shadow-2xl hover:shadow-3xl"
-            >
-              🤝 Partnership Opportunities
-            </Link>
-            <Link
-              href="/advertising"
-              className="px-10 py-5 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl hover:shadow-3xl"
-            >
-              📢 Advertising Packages
-            </Link>
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Content */}
+            <div className="space-y-8">
+              <div>
+                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                  Magnetize
+                  <br />
+                  <span className="text-4xl md:text-5xl">Your Media</span>
+                  <br />
+                  <span className="bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
+                    Partnership
+                  </span>
+                </h1>
+                <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                  Unlock efficiency with Kigali Today Ltd, your all-in-one media partnership platform. 
+                  Simplify brand reach and elevate audience engagement across radio, print, and digital channels. 
+                  Ready to transform your media presence?
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/partnership"
+                  className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg font-semibold text-center hover:from-orange-600 hover:to-red-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
+                  Get Started Today
+                </Link>
+                <Link
+                  href="/advertising"
+                  className="px-8 py-4 bg-orange-100 text-orange-700 rounded-lg font-semibold text-center border border-orange-200 hover:bg-orange-200 transition-all duration-200"
+                >
+                  Book a Demo
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side - Visual */}
+            <div className="relative">
+              <div className="relative z-10">
+                {/* Main Figure */}
+                <div className="relative">
+                  <div className="w-80 h-96 mx-auto relative">
+                    {/* Abstract Background Shapes */}
+                    <div className="absolute inset-0">
+                      <div className="absolute top-0 left-0 w-32 h-32 bg-orange-200 rounded-2xl transform rotate-12"></div>
+                      <div className="absolute top-8 right-0 w-24 h-24 bg-blue-200 rounded-2xl transform -rotate-12"></div>
+                      <div className="absolute bottom-0 left-8 w-28 h-28 bg-purple-200 rounded-full"></div>
+                    </div>
+                    
+                    {/* Main Person */}
+                    <div className="absolute top-16 left-1/2 transform -translate-x-1/2">
+                      <div className="w-48 h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-full flex items-center justify-center shadow-lg">
+                        <div className="w-40 h-40 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                          <span className="text-white text-4xl font-bold">KT</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Media Platform Cards */}
+                    <div className="absolute top-4 left-4 bg-white rounded-lg shadow-lg p-3 border border-gray-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white text-sm">📻</span>
+                        </div>
+                        <div>
+                          <div className="text-xs font-semibold text-gray-900">KT Radio</div>
+                          <div className="text-xs text-gray-600">Live Now</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute top-20 right-4 bg-white rounded-lg shadow-lg p-3 border border-gray-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white text-sm">📰</span>
+                        </div>
+                        <div>
+                          <div className="text-xs font-semibold text-gray-900">KT Press</div>
+                          <div className="text-xs text-gray-600">Weekly</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-lg p-3 border border-gray-200">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                          <span className="text-white text-sm">🌐</span>
+                        </div>
+                        <div>
+                          <div className="text-xs font-semibold text-gray-900">kigalitoday.com</div>
+                          <div className="text-xs text-gray-600">200K+ visitors</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Trust Indicators */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">750K+</div>
-              <div className="text-sm text-gray-600 font-medium">Monthly Reach</div>
+          <div className="mt-20 text-center">
+            <p className="text-sm text-gray-500 mb-8">Trust built on 2000+ successful partnerships</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">750K+</div>
+                <div className="text-sm text-gray-600 font-medium">Monthly Reach</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600 mb-2">80%+</div>
+                <div className="text-sm text-gray-600 font-medium">National Coverage</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600 mb-2">3</div>
+                <div className="text-sm text-gray-600 font-medium">Media Platforms</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-600 mb-2">15+</div>
+                <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">80%+</div>
-              <div className="text-sm text-gray-600 font-medium">National Coverage</div>
+          </div>
+        </div>
+
+        {/* Key Features Section */}
+        <div className="py-20 bg-gray-50">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Key Features</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Discover the complete capabilities of our media platform with comprehensive reach across Rwanda's most engaged audiences
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* KT Radio Feature */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-white text-2xl">📻</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Radio Broadcasting</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Effortlessly manage your brand reach with real-time radio broadcasting across 80% of Rwanda's population
+              </p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">3</div>
-              <div className="text-sm text-gray-600 font-medium">Media Platforms</div>
+
+            {/* Analytics Feature */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-white text-2xl">📊</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Analytics Dashboard</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Make data-driven decisions and foster professional growth with our comprehensive performance analytics dashboard
+              </p>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-indigo-600 mb-2">15+</div>
-              <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+
+            {/* Multi-Platform Management */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <span className="text-white text-2xl">🌐</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Multi-Platform Management</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Simplify media management with efficient cross-platform coordination through our centralized media ecosystem
+              </p>
             </div>
           </div>
         </div>
 
         {/* Our Media Ecosystem */}
-        <div className="mb-24">
+        <div className="py-20">
           <div className="text-center mb-16">
-            <div className="mb-6">
-              <span className="inline-block px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-bold">
-                🎯 COMPREHENSIVE MEDIA COVERAGE
-              </span>
-            </div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-8">Our Media Ecosystem</h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Media Ecosystem</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Kigali Today Ltd operates Rwanda's most comprehensive media platform, reaching audiences 
               through radio, print, and digital channels with unmatched coverage and influence.
             </p>
@@ -302,74 +426,67 @@ export default function LandingPage() {
 
 
         {/* Testimonials Section */}
-        <div className="mt-24 mb-20">
+        <div className="py-20 bg-gray-50">
           <div className="text-center mb-16">
-            <div className="mb-6">
-              <span className="inline-block px-6 py-3 bg-gradient-to-r from-green-100 to-blue-100 text-green-800 rounded-full text-sm font-bold">
-                💬 CLIENT TESTIMONIALS
-              </span>
-            </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">What Our Partners Say</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Trusted by leading brands and organizations across Rwanda</p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Trusted by leading brands and organizations across Rwanda</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300">
-              <div className="mb-6">
-                <div className="flex text-yellow-400 mb-4">
-                  <span className="text-2xl">⭐⭐⭐⭐⭐</span>
-                </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  "Kigali Today Ltd's multi-platform approach helped us reach both urban and rural audiences effectively. Their radio coverage is unmatched in Rwanda."
-                </p>
-              </div>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Testimonial */}
+            <div className="bg-gradient-to-r from-orange-100 to-pink-100 rounded-3xl p-8 shadow-lg">
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
                   JK
                 </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-gray-900">Jean Kamanzi</h4>
-                  <p className="text-gray-600 text-sm">CEO, Rwanda Business Group</p>
+                <div>
+                  <h4 className="text-xl font-bold text-gray-900">Jean Kamanzi</h4>
+                  <p className="text-gray-600">CEO, Rwanda Business Group</p>
                 </div>
+              </div>
+              <blockquote className="text-lg text-gray-700 leading-relaxed italic">
+                "Since using Kigali Today Ltd's media platform, our brand reach has become more efficient and organized. It's a game-changer!"
+              </blockquote>
+              <div className="flex text-yellow-400 mt-4">
+                <span className="text-2xl">⭐⭐⭐⭐⭐</span>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300">
-              <div className="mb-6">
-                <div className="flex text-yellow-400 mb-4">
-                  <span className="text-2xl">⭐⭐⭐⭐⭐</span>
+            {/* Right Side - Additional Testimonials */}
+            <div className="space-y-6">
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    MU
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Marie Uwimana</h4>
+                    <p className="text-gray-600 text-sm">Marketing Director, Tech Solutions Ltd</p>
+                  </div>
                 </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-gray-700 text-sm leading-relaxed">
                   "The combination of KT Press for business leaders and kigalitoday.com for the general public gave us comprehensive market penetration."
                 </p>
-              </div>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                  MU
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-gray-900">Marie Uwimana</h4>
-                  <p className="text-gray-600 text-sm">Marketing Director, Tech Solutions Ltd</p>
+                <div className="flex text-yellow-400 mt-2">
+                  <span className="text-lg">⭐⭐⭐⭐⭐</span>
                 </div>
               </div>
-            </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300">
-              <div className="mb-6">
-                <div className="flex text-yellow-400 mb-4">
-                  <span className="text-2xl">⭐⭐⭐⭐⭐</span>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-3">
+                    PN
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Paul Nkurunziza</h4>
+                    <p className="text-gray-600 text-sm">Founder, Community Development NGO</p>
+                  </div>
                 </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-gray-700 text-sm leading-relaxed">
                   "Working with Kigali Today Ltd was a game-changer. Their 80% national radio coverage helped us connect with communities across the country."
                 </p>
-              </div>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
-                  PN
-                </div>
-                <div className="ml-4">
-                  <h4 className="font-bold text-gray-900">Paul Nkurunziza</h4>
-                  <p className="text-gray-600 text-sm">Founder, Community Development NGO</p>
+                <div className="flex text-yellow-400 mt-2">
+                  <span className="text-lg">⭐⭐⭐⭐⭐</span>
                 </div>
               </div>
             </div>
@@ -410,102 +527,79 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-16 mt-24">
+      <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="md:col-span-1">
               <div className="flex items-center mb-6">
-                <div className="h-14 w-14 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="h-12 w-12 bg-gradient-to-r from-orange-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-xl">KT</span>
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-2xl font-bold">Kigali Today Ltd</h3>
+                <div className="ml-3">
+                  <h3 className="text-xl font-bold">Kigali Today Ltd</h3>
                   <p className="text-gray-400 text-sm">Rwanda's Premier Media Group</p>
                 </div>
               </div>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed text-sm mb-6">
                 Rwanda's premier media group connecting communities through radio, print, and digital platforms with unmatched reach and influence.
               </p>
-              <div className="mt-6">
-                <div className="flex space-x-4">
-                  <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
-                    <span className="text-white">📘</span>
-                  </div>
-                  <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors cursor-pointer">
-                    <span className="text-white">🐦</span>
-                  </div>
-                  <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center hover:bg-red-700 transition-colors cursor-pointer">
-                    <span className="text-white">📺</span>
-                  </div>
+              <div className="flex space-x-4">
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors cursor-pointer">
+                  <span className="text-white text-sm">📘</span>
+                </div>
+                <div className="w-8 h-8 bg-blue-400 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors cursor-pointer">
+                  <span className="text-white text-sm">🐦</span>
+                </div>
+                <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center hover:bg-red-700 transition-colors cursor-pointer">
+                  <span className="text-white text-sm">📺</span>
+                </div>
+                <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center hover:bg-blue-800 transition-colors cursor-pointer">
+                  <span className="text-white text-sm">💼</span>
                 </div>
               </div>
             </div>
             
             <div>
-              <h4 className="text-xl font-bold mb-6 text-white">Partnership</h4>
+              <h4 className="text-lg font-bold mb-6 text-white">Partnership</h4>
               <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors flex items-center group">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                  Multi-Platform Partnerships
-                </a></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center group">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                  Media Collaborations
-                </a></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center group">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                  Radio Partnerships
-                </a></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center group">
-                  <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                  Community Initiatives
-                </a></li>
+                <li><a href="/partnership" className="hover:text-white transition-colors text-sm">Multi-Platform Partnerships</a></li>
+                <li><a href="/partnership" className="hover:text-white transition-colors text-sm">Media Collaborations</a></li>
+                <li><a href="/partnership" className="hover:text-white transition-colors text-sm">Radio Partnerships</a></li>
+                <li><a href="/partnership" className="hover:text-white transition-colors text-sm">Community Initiatives</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="text-xl font-bold mb-6 text-white">Advertising</h4>
+              <h4 className="text-lg font-bold mb-6 text-white">Advertising</h4>
               <ul className="space-y-3 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors flex items-center group">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                  Multi-Platform Packages
-                </a></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center group">
-                  <span className="w-2 h-2 bg-green-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                  KT Radio Advertising
-                </a></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center group">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                  KT Press Advertising
-                </a></li>
-                <li><a href="#" className="hover:text-white transition-colors flex items-center group">
-                  <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3 group-hover:bg-white transition-colors"></span>
-                  Digital Advertising
-                </a></li>
+                <li><a href="/advertising" className="hover:text-white transition-colors text-sm">Multi-Platform Packages</a></li>
+                <li><a href="/advertising" className="hover:text-white transition-colors text-sm">KT Radio Advertising</a></li>
+                <li><a href="/advertising" className="hover:text-white transition-colors text-sm">KT Press Advertising</a></li>
+                <li><a href="/advertising" className="hover:text-white transition-colors text-sm">Digital Advertising</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="text-xl font-bold mb-6 text-white">Contact</h4>
+              <h4 className="text-lg font-bold mb-6 text-white">Contact</h4>
               <ul className="space-y-3 text-gray-400">
-                <li className="flex items-center">
-                  <span className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
+                <li className="flex items-center text-sm">
+                  <span className="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
                   partnerships@kigalitoday.rw
                 </li>
-                <li className="flex items-center">
-                  <span className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
+                <li className="flex items-center text-sm">
+                  <span className="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
                   advertising@kigalitoday.rw
                 </li>
-                <li className="flex items-center">
-                  <span className="w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
+                <li className="flex items-center text-sm">
+                  <span className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center mr-3 text-xs">📧</span>
                   press@kigalitoday.rw
                 </li>
-                <li className="flex items-center">
-                  <span className="w-6 h-6 bg-indigo-600 rounded-full flex items-center justify-center mr-3 text-xs">📞</span>
+                <li className="flex items-center text-sm">
+                  <span className="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mr-3 text-xs">📞</span>
                   +250 788 123 456
                 </li>
-                <li className="flex items-center">
-                  <span className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center mr-3 text-xs">📍</span>
+                <li className="flex items-center text-sm">
+                  <span className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center mr-3 text-xs">📍</span>
                   Kigali, Rwanda
                 </li>
               </ul>
