@@ -78,7 +78,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>📊</span>
                 <span>Overview</span>
               </span>
@@ -91,7 +91,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>👥</span>
                 <span>Users</span>
               </span>
@@ -104,7 +104,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>🤝</span>
                 <span>Partnerships</span>
               </span>
@@ -117,7 +117,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>📢</span>
                 <span>Campaigns</span>
               </span>
@@ -130,7 +130,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>📈</span>
                 <span>Analytics</span>
               </span>
@@ -143,7 +143,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>🌐</span>
                 <span>Website Analytics</span>
               </span>
@@ -156,7 +156,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>📻</span>
                 <span>Radio Analytics</span>
               </span>
@@ -169,7 +169,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>📱</span>
                 <span>Radio App</span>
               </span>
@@ -182,7 +182,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>📱</span>
                 <span>Social Media</span>
               </span>
@@ -195,7 +195,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>💬</span>
                 <span>Messages</span>
               </span>
@@ -208,7 +208,7 @@ export default function AdminDashboard() {
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
               }`}
             >
-              <span className="flex items-center space-x-2">
+              <span className="flex flex-col items-center space-y-1">
                 <span>⚙️</span>
                 <span>Settings</span>
               </span>
