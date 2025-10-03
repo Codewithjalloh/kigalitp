@@ -136,6 +136,45 @@ export default function AdminDashboard() {
               </span>
             </button>
             <button
+              onClick={() => setActiveTab('websites')}
+              className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
+                activeTab === 'websites'
+                  ? 'border-blue-500 text-blue-600 bg-blue-50'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+              <span className="flex items-center space-x-2">
+                <span>🌐</span>
+                <span>Website Analytics</span>
+              </span>
+            </button>
+            <button
+              onClick={() => setActiveTab('radio')}
+              className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
+                activeTab === 'radio'
+                  ? 'border-blue-500 text-blue-600 bg-blue-50'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+              <span className="flex items-center space-x-2">
+                <span>📻</span>
+                <span>Radio Analytics</span>
+              </span>
+            </button>
+            <button
+              onClick={() => setActiveTab('radioapp')}
+              className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
+                activeTab === 'radioapp'
+                  ? 'border-blue-500 text-blue-600 bg-blue-50'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+              <span className="flex items-center space-x-2">
+                <span>📱</span>
+                <span>Radio App</span>
+              </span>
+            </button>
+            <button
               onClick={() => setActiveTab('social')}
               className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
                 activeTab === 'social'
@@ -1151,6 +1190,1258 @@ export default function AdminDashboard() {
           </div>
         )}
 
+        {/* Website Analytics Tab */}
+        {activeTab === 'websites' && (
+          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            {/* Header Section */}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">Website Analytics</h2>
+                <p className="text-gray-600">Comprehensive analytics for kigalitoday.com and ktpress.rw</p>
+              </div>
+              <div className="flex space-x-3">
+                <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                  Sync GA Data
+                </button>
+                <button className="bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200">
+                  Export Report
+                </button>
+              </div>
+            </div>
+
+            {/* Overall Website Statistics */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Total Page Views</p>
+                    <p className="text-2xl font-bold text-gray-900">2.8M</p>
+                    <p className="text-xs text-green-600 font-medium">+18% this month</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">👁️</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Unique Visitors</p>
+                    <p className="text-2xl font-bold text-gray-900">485K</p>
+                    <p className="text-xs text-green-600 font-medium">+12% this month</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">👥</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Avg. Session Duration</p>
+                    <p className="text-2xl font-bold text-gray-900">3:24</p>
+                    <p className="text-xs text-green-600 font-medium">+8% improvement</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">⏱️</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Bounce Rate</p>
+                    <p className="text-2xl font-bold text-gray-900">42%</p>
+                    <p className="text-xs text-green-600 font-medium">-5% improvement</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">📊</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Website Performance Comparison */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* kigalitoday.com */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-lg font-bold">KT</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">kigalitoday.com</h3>
+                      <p className="text-sm text-gray-600">Main website</p>
+                    </div>
+                  </div>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">Live</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">1.8M</div>
+                    <div className="text-sm text-gray-600">Page Views</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">320K</div>
+                    <div className="text-sm text-gray-600">Unique Visitors</div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between text-sm">
+                    <span>Avg. Session Duration</span>
+                    <span className="font-semibold">4:12</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>Bounce Rate</span>
+                    <span className="font-semibold">38%</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>Pages per Session</span>
+                    <span className="font-semibold">3.2</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>New Visitors</span>
+                    <span className="font-semibold">68%</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* ktpress.rw */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-lg font-bold">KP</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900">ktpress.rw</h3>
+                      <p className="text-sm text-gray-600">Press website</p>
+                    </div>
+                  </div>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">Live</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">1.0M</div>
+                    <div className="text-sm text-gray-600">Page Views</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">165K</div>
+                    <div className="text-sm text-gray-600">Unique Visitors</div>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between text-sm">
+                    <span>Avg. Session Duration</span>
+                    <span className="font-semibold">2:48</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>Bounce Rate</span>
+                    <span className="font-semibold">46%</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>Pages per Session</span>
+                    <span className="font-semibold">2.8</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>New Visitors</span>
+                    <span className="font-semibold">72%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Traffic Sources */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Traffic Sources Chart */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Traffic Sources</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Organic Search</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '45%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">45%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Direct Traffic</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '28%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">28%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Social Media</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: '15%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">15%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Referrals</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '12%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">12%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Device Analytics */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Device Analytics</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Mobile</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '62%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">62%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Desktop</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '32%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">32%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Tablet</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: '6%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">6%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Top Performing Pages */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Top Performing Pages</h3>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">KT</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">kigalitoday.com/news</p>
+                      <p className="text-sm text-gray-600">Latest news and updates</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold text-gray-900">245K views</p>
+                    <p className="text-sm text-green-600">+15% this week</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">KP</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">ktpress.rw/articles</p>
+                      <p className="text-sm text-gray-600">Press articles and features</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold text-gray-900">180K views</p>
+                    <p className="text-sm text-green-600">+22% this week</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">KT</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">kigalitoday.com/radio</p>
+                      <p className="text-sm text-gray-600">Live radio streaming</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold text-gray-900">156K views</p>
+                    <p className="text-sm text-green-600">+8% this week</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">KP</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">ktpress.rw/opinion</p>
+                      <p className="text-sm text-gray-600">Opinion pieces and editorials</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold text-gray-900">98K views</p>
+                    <p className="text-sm text-green-600">+12% this week</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Geographic Analytics */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Geographic Distribution</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-2xl font-bold text-gray-900 mb-1">🇷🇼</div>
+                  <div className="text-lg font-semibold text-gray-900">Rwanda</div>
+                  <div className="text-sm text-gray-600">68% of traffic</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-2xl font-bold text-gray-900 mb-1">🇺🇬</div>
+                  <div className="text-lg font-semibold text-gray-900">Uganda</div>
+                  <div className="text-sm text-gray-600">12% of traffic</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-2xl font-bold text-gray-900 mb-1">🇰🇪</div>
+                  <div className="text-lg font-semibold text-gray-900">Kenya</div>
+                  <div className="text-sm text-gray-600">8% of traffic</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-2xl font-bold text-gray-900 mb-1">🇹🇿</div>
+                  <div className="text-lg font-semibold text-gray-900">Tanzania</div>
+                  <div className="text-sm text-gray-600">5% of traffic</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-2xl font-bold text-gray-900 mb-1">🇺🇸</div>
+                  <div className="text-lg font-semibold text-gray-900">United States</div>
+                  <div className="text-sm text-gray-600">4% of traffic</div>
+                </div>
+                <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-2xl font-bold text-gray-900 mb-1">🌍</div>
+                  <div className="text-lg font-semibold text-gray-900">Other</div>
+                  <div className="text-sm text-gray-600">3% of traffic</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Radio Analytics Tab */}
+        {activeTab === 'radio' && (
+          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            {/* Header Section */}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">Radio Analytics</h2>
+                <p className="text-gray-600">Comprehensive analytics for KT Radio operations and listener engagement</p>
+              </div>
+              <div className="flex space-x-3">
+                <button className="bg-gradient-to-r from-red-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-red-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                  Sync Radio Data
+                </button>
+                <button className="bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200">
+                  Export Report
+                </button>
+              </div>
+            </div>
+
+            {/* Live Radio Status Banner */}
+            <div className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 rounded-3xl p-8 text-white relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="flex items-center space-x-3 mb-2">
+                      <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                      <span className="text-lg font-semibold">LIVE ON AIR</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2">Morning Show with Sarah</h3>
+                    <p className="text-pink-100 text-lg">Currently broadcasting to 2,847 live listeners</p>
+                    <div className="mt-4 flex items-center space-x-2">
+                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">📻 LIVE</span>
+                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">🎙️ 50kW</span>
+                      <span className="px-3 py-1 bg-white/20 rounded-full text-sm font-semibold">📡 FM 98.5</span>
+                    </div>
+                  </div>
+                  <div className="text-6xl opacity-20">📻</div>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-purple-600/20"></div>
+            </div>
+
+            {/* Radio Performance Statistics */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Live Listeners</p>
+                    <p className="text-2xl font-bold text-gray-900">2,847</p>
+                    <p className="text-xs text-green-600 font-medium">+12% from yesterday</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">👥</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Total Shows</p>
+                    <p className="text-2xl font-bold text-gray-900">24</p>
+                    <p className="text-xs text-green-600 font-medium">+2 new shows</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">📻</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Avg. Listen Time</p>
+                    <p className="text-2xl font-bold text-gray-900">42 min</p>
+                    <p className="text-xs text-green-600 font-medium">+8% improvement</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">⏱️</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Peak Listeners</p>
+                    <p className="text-2xl font-bold text-gray-900">4,250</p>
+                    <p className="text-xs text-green-600 font-medium">Today's peak</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">📈</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Show Performance Analytics */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Top Performing Shows */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Top Performing Shows</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-red-50 to-pink-50 rounded-xl border border-red-200">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Morning Show with Sarah</p>
+                        <p className="text-sm text-gray-600">6:00 AM - 10:00 AM • LIVE</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">2,847 listeners</p>
+                      <p className="text-sm text-green-600">+15% this week</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Afternoon Drive</p>
+                        <p className="text-sm text-gray-600">3:00 PM - 7:00 PM • Scheduled</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">1,890 avg</p>
+                      <p className="text-sm text-green-600">+8% this week</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Evening Talk</p>
+                        <p className="text-sm text-gray-600">8:00 PM - 10:00 PM • Scheduled</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">1,456 avg</p>
+                      <p className="text-sm text-green-600">+12% this week</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                      <div>
+                        <p className="font-semibold text-gray-900">News Update</p>
+                        <p className="text-sm text-gray-600">12:00 PM - 12:30 PM • Scheduled</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">2,156 avg</p>
+                      <p className="text-sm text-green-600">+5% this week</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Listener Demographics */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Listener Demographics</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Age 25-34</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '35%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">35%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Age 35-44</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '28%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">28%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Age 18-24</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: '22%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">22%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Age 45+</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '15%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">15%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Geographic Distribution & Time Analytics */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Geographic Distribution */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Geographic Distribution</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Kigali</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '45%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">45%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Huye</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '18%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">18%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Musanze</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: '12%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">12%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Rubavu</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '8%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">8%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-gray-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Other</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-gray-500 h-2 rounded-full" style={{ width: '17%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">17%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Peak Listening Hours */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Peak Listening Hours</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">6:00 AM - 10:00 AM</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-red-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">Peak</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-orange-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">12:00 PM - 2:00 PM</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-orange-500 h-2 rounded-full" style={{ width: '75%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">High</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">3:00 PM - 7:00 PM</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '80%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">High</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">8:00 PM - 10:00 PM</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '60%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">Medium</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Performance & Engagement */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Content Performance */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Content Performance</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">🎵</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Music Content</p>
+                        <p className="text-sm text-gray-600">Popular songs and playlists</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">85% engagement</p>
+                      <p className="text-sm text-green-600">+12% this week</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">📰</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">News & Updates</p>
+                        <p className="text-sm text-gray-600">Breaking news and current events</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">92% engagement</p>
+                      <p className="text-sm text-green-600">+18% this week</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">💬</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Talk Shows</p>
+                        <p className="text-sm text-gray-600">Interactive discussions and interviews</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">78% engagement</p>
+                      <p className="text-sm text-green-600">+8% this week</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Engagement Metrics */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Engagement Metrics</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">1,247</div>
+                    <div className="text-sm text-gray-600">Call-ins Today</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">892</div>
+                    <div className="text-sm text-gray-600">Text Messages</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">456</div>
+                    <div className="text-sm text-gray-600">Social Interactions</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">234</div>
+                    <div className="text-sm text-gray-600">Email Responses</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Radio Revenue Analytics */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Radio Revenue Analytics</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="text-center p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200">
+                  <div className="text-3xl font-bold text-gray-900 mb-2">$125K</div>
+                  <div className="text-sm text-gray-600 mb-1">Monthly Revenue</div>
+                  <div className="text-xs text-green-600 font-medium">+8% this month</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+                  <div className="text-3xl font-bold text-gray-900 mb-2">$45K</div>
+                  <div className="text-sm text-gray-600 mb-1">Advertising Revenue</div>
+                  <div className="text-xs text-green-600 font-medium">+15% this month</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200">
+                  <div className="text-3xl font-bold text-gray-900 mb-2">$80K</div>
+                  <div className="text-sm text-gray-600 mb-1">Sponsorship Revenue</div>
+                  <div className="text-xs text-green-600 font-medium">+5% this month</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Radio App Analytics Tab */}
+        {activeTab === 'radioapp' && (
+          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            {/* Header Section */}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">Radio App Analytics</h2>
+                <p className="text-gray-600">Mobile app data, user engagements, and campaign feedback from KT Radio app</p>
+              </div>
+              <div className="flex space-x-3">
+                <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                  Sync App Data
+                </button>
+                <button className="bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200">
+                  Export Report
+                </button>
+              </div>
+            </div>
+
+            {/* App Performance Overview */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Total App Users</p>
+                    <p className="text-2xl font-bold text-gray-900">45.2K</p>
+                    <p className="text-xs text-green-600 font-medium">+18% this month</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">👥</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Active Users</p>
+                    <p className="text-2xl font-bold text-gray-900">28.7K</p>
+                    <p className="text-xs text-green-600 font-medium">+12% this week</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">📱</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">Avg. Session Time</p>
+                    <p className="text-2xl font-bold text-gray-900">24 min</p>
+                    <p className="text-xs text-green-600 font-medium">+8% improvement</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">⏱️</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-600 mb-1">App Rating</p>
+                    <p className="text-2xl font-bold text-gray-900">4.7★</p>
+                    <p className="text-xs text-green-600 font-medium">+0.2 this month</p>
+                  </div>
+                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center">
+                    <span className="text-white text-xl">⭐</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* App Store Performance */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Downloads & Reviews */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">App Store Performance</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">📥</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Total Downloads</p>
+                        <p className="text-sm text-gray-600">All time</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-lg font-semibold text-gray-900">45.2K</p>
+                      <p className="text-sm text-green-600">+2.1K this week</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">⭐</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">App Store Rating</p>
+                        <p className="text-sm text-gray-600">iOS App Store</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-lg font-semibold text-gray-900">4.7★</p>
+                      <p className="text-sm text-green-600">Based on 1,247 reviews</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">⭐</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Play Store Rating</p>
+                        <p className="text-sm text-gray-600">Google Play Store</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-lg font-semibold text-gray-900">4.6★</p>
+                      <p className="text-sm text-green-600">Based on 892 reviews</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* User Engagement Metrics */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">User Engagement</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">3.2</div>
+                    <div className="text-sm text-gray-600">Sessions per User</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">68%</div>
+                    <div className="text-sm text-gray-600">Retention Rate</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">24 min</div>
+                    <div className="text-sm text-gray-600">Avg. Session</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">12%</div>
+                    <div className="text-sm text-gray-600">Crash Rate</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Campaign Performance in App */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Campaign Performance in App</h3>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-sm">📢</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Tech Solutions Campaign</p>
+                      <p className="text-sm text-gray-600">Jan 15 - Apr 15, 2024</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold text-gray-900">2,847 app views</p>
+                    <p className="text-sm text-green-600">+15% engagement</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-sm">📢</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Business Group Campaign</p>
+                      <p className="text-sm text-gray-600">Dec 1 - Jun 1, 2024</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold text-gray-900">1,890 app views</p>
+                    <p className="text-sm text-green-600">+8% engagement</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                      <span className="text-white text-sm">📢</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Community Development Campaign</p>
+                      <p className="text-sm text-gray-600">Feb 1 - Aug 1, 2024</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold text-gray-900">1,456 app views</p>
+                    <p className="text-sm text-green-600">+12% engagement</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* User Feedback & Reviews */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Recent User Reviews */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Recent User Reviews</h3>
+                <div className="space-y-4">
+                  <div className="p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
+                        <span className="text-sm font-semibold text-gray-900">5.0</span>
+                      </div>
+                      <span className="text-xs text-gray-500">2 hours ago</span>
+                    </div>
+                    <p className="text-sm text-gray-700 mb-2">"Amazing radio app! Great sound quality and easy to use. Love the live shows!"</p>
+                    <p className="text-xs text-gray-500">- Sarah M.</p>
+                  </div>
+                  <div className="p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
+                        <span className="text-sm font-semibold text-gray-900">5.0</span>
+                      </div>
+                      <span className="text-xs text-gray-500">1 day ago</span>
+                    </div>
+                    <p className="text-sm text-gray-700 mb-2">"Best radio app in Rwanda! Always updated with latest news and music."</p>
+                    <p className="text-xs text-gray-500">- John K.</p>
+                  </div>
+                  <div className="p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center space-x-2">
+                        <span className="text-yellow-500">⭐⭐⭐⭐</span>
+                        <span className="text-sm font-semibold text-gray-900">4.0</span>
+                      </div>
+                      <span className="text-xs text-gray-500">2 days ago</span>
+                    </div>
+                    <p className="text-sm text-gray-700 mb-2">"Good app but sometimes crashes. Please fix the streaming issues."</p>
+                    <p className="text-xs text-gray-500">- Maria G.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* User Feedback Analytics */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Feedback Analytics</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Positive Feedback</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '78%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">78%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Neutral Feedback</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '15%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">15%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Negative Feedback</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-red-500 h-2 rounded-full" style={{ width: '7%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">7%</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6 grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">1,247</div>
+                    <div className="text-sm text-gray-600">Total Reviews</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                    <div className="text-2xl font-bold text-gray-900">4.7</div>
+                    <div className="text-sm text-gray-600">Avg. Rating</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Push Notifications & Features Usage */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Push Notifications */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Push Notifications</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">📢</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Campaign Notifications</p>
+                        <p className="text-sm text-gray-600">Sent this week</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">2,847 sent</p>
+                      <p className="text-sm text-green-600">85% open rate</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">📰</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">News Alerts</p>
+                        <p className="text-sm text-gray-600">Breaking news</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">1,890 sent</p>
+                      <p className="text-sm text-green-600">92% open rate</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span className="text-white text-sm">🎵</span>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">Show Reminders</p>
+                        <p className="text-sm text-gray-600">Favorite shows</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-gray-900">1,456 sent</p>
+                      <p className="text-sm text-green-600">78% open rate</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature Usage */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Feature Usage</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Live Radio</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">95%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Podcasts</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-green-500 h-2 rounded-full" style={{ width: '68%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">68%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">News Section</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-purple-500 h-2 rounded-full" style={{ width: '82%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">82%</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-gray-900">Social Features</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-32 bg-gray-200 rounded-full h-2">
+                        <div className="bg-yellow-500 h-2 rounded-full" style={{ width: '45%' }}></div>
+                      </div>
+                      <span className="text-sm text-gray-600 w-16 text-right">45%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* App Performance Metrics */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">App Performance Metrics</h3>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="text-center p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200">
+                  <div className="text-3xl font-bold text-gray-900 mb-2">2.1s</div>
+                  <div className="text-sm text-gray-600 mb-1">Avg. Load Time</div>
+                  <div className="text-xs text-green-600 font-medium">-0.3s improvement</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+                  <div className="text-3xl font-bold text-gray-900 mb-2">12%</div>
+                  <div className="text-sm text-gray-600 mb-1">Crash Rate</div>
+                  <div className="text-xs text-green-600 font-medium">-2% improvement</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200">
+                  <div className="text-3xl font-bold text-gray-900 mb-2">68%</div>
+                  <div className="text-sm text-gray-600 mb-1">Retention Rate</div>
+                  <div className="text-xs text-green-600 font-medium">+5% improvement</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+                  <div className="text-3xl font-bold text-gray-900 mb-2">4.7★</div>
+                  <div className="text-sm text-gray-600 mb-1">User Rating</div>
+                  <div className="text-xs text-green-600 font-medium">+0.2 improvement</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Social Media Tab */}
         {activeTab === 'social' && (
           <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -2018,6 +3309,80 @@ export default function AdminDashboard() {
                     <div>
                       <label className="block text-sm font-semibold text-gray-700">Social Media Integration</label>
                       <p className="text-sm text-gray-500">Connect with social media platforms</p>
+                    </div>
+                    <button className="w-12 h-6 bg-green-500 rounded-full relative transition-colors">
+                      <div className="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5 transition-transform"></div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Google Analytics API Keys */}
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                  <span className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-white text-sm">📊</span>
+                  </span>
+                  Google Analytics API Keys
+                </h3>
+                <div className="space-y-6">
+                  {/* Google Analytics 4 Configuration */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Google Analytics 4 Configuration</label>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <input
+                        type="text"
+                        placeholder="GA4 Measurement ID (G-XXXXXXXXXX)"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                      />
+                      <input
+                        type="password"
+                        placeholder="GA4 API Key"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Website-specific GA4 Properties */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Website-specific GA4 Properties</label>
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input
+                          type="text"
+                          placeholder="kigalitoday.com GA4 Property ID"
+                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                        />
+                        <input
+                          type="text"
+                          placeholder="ktpress.rw GA4 Property ID"
+                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Google Analytics Service Account */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Service Account Credentials</label>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <input
+                        type="text"
+                        placeholder="Service Account Email"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                      />
+                      <input
+                        type="password"
+                        placeholder="Private Key (JSON)"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700">Real-time Analytics Sync</label>
+                      <p className="text-sm text-gray-500">Automatically sync Google Analytics data every 15 minutes</p>
                     </div>
                     <button className="w-12 h-6 bg-green-500 rounded-full relative transition-colors">
                       <div className="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5 transition-transform"></div>
