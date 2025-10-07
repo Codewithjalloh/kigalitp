@@ -17,17 +17,17 @@ export default function AdvertisingDashboard() {
     targetAudience: '',
     budget: '',
     duration: '',
-    platforms: [],
+    platforms: [] as string[],
     startDate: '',
     endDate: '',
     campaignType: '',
     industry: '',
-    objectives: [],
+    objectives: [] as string[],
     demographics: {
       ageRange: '',
       gender: '',
       location: '',
-      interests: []
+      interests: [] as string[]
     },
     creativeAssets: {
       hasLogo: false,
@@ -72,17 +72,17 @@ export default function AdvertisingDashboard() {
       targetAudience: '',
       budget: '',
       duration: '',
-      platforms: [],
+      platforms: [] as string[],
       startDate: '',
       endDate: '',
       campaignType: '',
       industry: '',
-      objectives: [],
+      objectives: [] as string[],
       demographics: {
         ageRange: '',
         gender: '',
         location: '',
-        interests: []
+        interests: [] as string[]
       },
       creativeAssets: {
         hasLogo: false,
@@ -276,17 +276,17 @@ export default function AdvertisingDashboard() {
       targetAudience: '',
       budget: '',
       duration: '',
-      platforms: [],
+      platforms: [] as string[],
       startDate: '',
       endDate: '',
       campaignType: '',
       industry: '',
-      objectives: [],
+      objectives: [] as string[],
       demographics: {
         ageRange: '',
         gender: '',
         location: '',
-        interests: []
+        interests: [] as string[]
       },
       creativeAssets: {
         hasLogo: false,
@@ -519,6 +519,19 @@ export default function AdvertisingDashboard() {
               <span className="flex items-center space-x-2">
                 <span>📢</span>
                 <span>My Campaigns</span>
+              </span>
+            </button>
+            <button
+              onClick={() => setActiveTab('ourstats')}
+              className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
+                activeTab === 'ourstats'
+                  ? 'border-blue-500 text-blue-600 bg-blue-50'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+              <span className="flex items-center space-x-2">
+                <span>📊</span>
+                <span>Our Stats</span>
               </span>
             </button>
             <button
@@ -1065,6 +1078,231 @@ export default function AdvertisingDashboard() {
                 <button className="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition-colors">
                   Contact Sales
                 </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Our Stats Tab */}
+        {activeTab === 'ourstats' && (
+          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            {/* Header Section */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Advertising Platform Statistics</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Discover why Kigali Today Ltd is Rwanda's most effective advertising platform. 
+                Our impressive reach, engagement rates, and proven results make us the ideal choice for your advertising campaigns.
+              </p>
+            </div>
+
+            {/* Key Performance Indicators */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl shadow-xl p-8 text-white text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl font-bold mb-2">750K+</div>
+                <div className="text-blue-100 text-lg font-semibold">Monthly Reach</div>
+                <div className="text-blue-200 text-sm mt-2">Across all platforms</div>
+              </div>
+              <div className="bg-gradient-to-br from-green-500 to-green-700 rounded-2xl shadow-xl p-8 text-white text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl font-bold mb-2">85%</div>
+                <div className="text-green-100 text-lg font-semibold">Campaign Success Rate</div>
+                <div className="text-green-200 text-sm mt-2">Exceeding client goals</div>
+              </div>
+              <div className="bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl shadow-xl p-8 text-white text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl font-bold mb-2">2000+</div>
+                <div className="text-purple-100 text-lg font-semibold">Successful Campaigns</div>
+                <div className="text-purple-200 text-sm mt-2">Trusted by brands</div>
+              </div>
+              <div className="bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl shadow-xl p-8 text-white text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl font-bold mb-2">15+</div>
+                <div className="text-orange-100 text-lg font-semibold">Years Experience</div>
+                <div className="text-orange-200 text-sm mt-2">Media advertising leader</div>
+              </div>
+            </div>
+
+            {/* Platform Performance */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-gray-200 mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Advertising Platform Performance</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* KT Radio */}
+                <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">📻</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">KT Radio Advertising</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Daily Listeners</span>
+                      <span className="font-bold text-blue-600">150K+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Ad Recall Rate</span>
+                      <span className="font-bold text-blue-600">78%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Engagement Rate</span>
+                      <span className="font-bold text-blue-600">65%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">ROI Average</span>
+                      <span className="font-bold text-blue-600">320%</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* KT Press */}
+                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">📰</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">KT Press Advertising</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Weekly Circulation</span>
+                      <span className="font-bold text-green-600">50K+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Readership</span>
+                      <span className="font-bold text-green-600">200K+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Business Leaders</span>
+                      <span className="font-bold text-green-600">85%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Ad Effectiveness</span>
+                      <span className="font-bold text-green-600">92%</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* kigalitoday.com */}
+                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">🌐</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">Digital Advertising</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Monthly Visitors</span>
+                      <span className="font-bold text-purple-600">200K+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Click-Through Rate</span>
+                      <span className="font-bold text-purple-600">4.2%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Conversion Rate</span>
+                      <span className="font-bold text-purple-600">8.5%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Cost Per Click</span>
+                      <span className="font-bold text-purple-600">$0.15</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Audience Demographics */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-gray-200 mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Advertising Audience Demographics</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center p-6 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl">
+                  <div className="text-3xl font-bold text-indigo-600 mb-2">25-45</div>
+                  <div className="text-gray-700 font-semibold">Primary Age Group</div>
+                  <div className="text-gray-500 text-sm mt-1">Decision makers & professionals</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl">
+                  <div className="text-3xl font-bold text-pink-600 mb-2">60/40</div>
+                  <div className="text-gray-700 font-semibold">Gender Split</div>
+                  <div className="text-gray-500 text-sm mt-1">Male/Female ratio</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl">
+                  <div className="text-3xl font-bold text-teal-600 mb-2">Urban</div>
+                  <div className="text-gray-700 font-semibold">Primary Location</div>
+                  <div className="text-gray-500 text-sm mt-1">Kigali & major cities</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl">
+                  <div className="text-3xl font-bold text-amber-600 mb-2">85%</div>
+                  <div className="text-gray-700 font-semibold">Kinyarwanda</div>
+                  <div className="text-gray-500 text-sm mt-1">Native language speakers</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Campaign Success Metrics */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-gray-200 mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Campaign Success Metrics</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="text-center p-6 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-2xl">
+                  <div className="text-4xl font-bold text-emerald-600 mb-3">85%</div>
+                  <div className="text-gray-700 font-semibold text-lg mb-2">Campaign Success Rate</div>
+                  <div className="text-gray-500 text-sm">Campaigns exceeding client goals</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-2xl">
+                  <div className="text-4xl font-bold text-cyan-600 mb-3">320%</div>
+                  <div className="text-gray-700 font-semibold text-lg mb-2">Average ROI</div>
+                  <div className="text-gray-500 text-sm">Return on advertising investment</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-rose-50 to-rose-100 rounded-2xl">
+                  <div className="text-4xl font-bold text-rose-600 mb-3">92%</div>
+                  <div className="text-gray-700 font-semibold text-lg mb-2">Client Satisfaction</div>
+                  <div className="text-gray-500 text-sm">Repeat business rate</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Success Stories */}
+            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-3xl shadow-2xl p-10 text-white relative overflow-hidden">
+              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold mb-8 text-center">Why Advertise with Kigali Today Ltd?</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">🎯</span>
+                    </div>
+                    <h4 className="text-xl font-bold mb-3">Precise Targeting</h4>
+                    <p className="text-white/90">Reach your exact audience with our advanced demographic and geographic targeting</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">📈</span>
+                    </div>
+                    <h4 className="text-xl font-bold mb-3">Proven Results</h4>
+                    <p className="text-white/90">85% campaign success rate with average 320% ROI across all platforms</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">🏆</span>
+                    </div>
+                    <h4 className="text-xl font-bold mb-3">Industry Leader</h4>
+                    <p className="text-white/90">15+ years of advertising excellence with 2000+ successful campaigns</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Launch Your Next Successful Campaign?</h3>
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Join thousands of successful brands who trust Kigali Today Ltd for their advertising needs. 
+                Let's create a campaign that delivers real results for your business.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  onClick={handleCreateCampaign}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
+                  Create Your Campaign
+                </button>
+                <Link
+                  href="/partnership"
+                  className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl text-center"
+                >
+                  Explore Partnership Options
+                </Link>
               </div>
             </div>
           </div>
@@ -3104,7 +3342,7 @@ export default function AdvertisingDashboard() {
                       <div className="grid grid-cols-3 gap-4">
                         {selectedCampaign.budgetAllocation && Object.entries(selectedCampaign.budgetAllocation).map(([platform, amount]) => (
                           <div key={platform} className="text-center">
-                            <div className="text-lg font-bold text-purple-600">${amount}</div>
+                            <div className="text-lg font-bold text-purple-600">${amount as number}</div>
                             <div className="text-sm text-gray-600 capitalize">{platform}</div>
                           </div>
                         ))}

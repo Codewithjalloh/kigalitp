@@ -301,6 +301,19 @@ export default function PartnershipDashboard() {
               </span>
             </button>
             <button
+              onClick={() => setActiveTab('ourstats')}
+              className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
+                activeTab === 'ourstats'
+                  ? 'border-green-500 text-green-600 bg-green-50'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+              <span className="flex items-center space-x-2">
+                <span>📊</span>
+                <span>Our Stats</span>
+              </span>
+            </button>
+            <button
               onClick={() => setActiveTab('analytics')}
               className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
                 activeTab === 'analytics'
@@ -801,6 +814,208 @@ export default function PartnershipDashboard() {
           </div>
         )}
 
+        {/* Our Stats Tab */}
+        {activeTab === 'ourstats' && (
+          <div className={`space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            {/* Header Section */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Company Statistics</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Discover why Kigali Today Ltd is Rwanda's premier media partnership platform. 
+                Our impressive reach and proven track record make us the ideal partner for your business growth.
+              </p>
+            </div>
+
+            {/* Key Performance Indicators */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl shadow-xl p-8 text-white text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl font-bold mb-2">750K+</div>
+                <div className="text-blue-100 text-lg font-semibold">Monthly Reach</div>
+                <div className="text-blue-200 text-sm mt-2">Across all platforms</div>
+              </div>
+              <div className="bg-gradient-to-br from-green-500 to-green-700 rounded-2xl shadow-xl p-8 text-white text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl font-bold mb-2">80%+</div>
+                <div className="text-green-100 text-lg font-semibold">National Coverage</div>
+                <div className="text-green-200 text-sm mt-2">Radio & digital reach</div>
+              </div>
+              <div className="bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl shadow-xl p-8 text-white text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl font-bold mb-2">15+</div>
+                <div className="text-purple-100 text-lg font-semibold">Years Experience</div>
+                <div className="text-purple-200 text-sm mt-2">Media industry leader</div>
+              </div>
+              <div className="bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl shadow-xl p-8 text-white text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div className="text-4xl font-bold mb-2">2000+</div>
+                <div className="text-orange-100 text-lg font-semibold">Successful Partnerships</div>
+                <div className="text-orange-200 text-sm mt-2">Trusted by brands</div>
+              </div>
+            </div>
+
+            {/* Platform Performance */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-gray-200 mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Media Platform Performance</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* KT Radio */}
+                <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">📻</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">KT Radio</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">National Coverage</span>
+                      <span className="font-bold text-blue-600">80%+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Daily Listeners</span>
+                      <span className="font-bold text-blue-600">150K+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Live Shows</span>
+                      <span className="font-bold text-blue-600">12+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Languages</span>
+                      <span className="font-bold text-blue-600">3</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* KT Press */}
+                <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">📰</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">KT Press</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Weekly Circulation</span>
+                      <span className="font-bold text-green-600">50K+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Distribution Points</span>
+                      <span className="font-bold text-green-600">200+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Business Leaders</span>
+                      <span className="font-bold text-green-600">85%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Readership</span>
+                      <span className="font-bold text-green-600">200K+</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* kigalitoday.com */}
+                <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">🌐</span>
+                  </div>
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">kigalitoday.com</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Monthly Visitors</span>
+                      <span className="font-bold text-purple-600">200K+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Page Views</span>
+                      <span className="font-bold text-purple-600">1.2M+</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Bounce Rate</span>
+                      <span className="font-bold text-purple-600">35%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600">Avg. Session</span>
+                      <span className="font-bold text-purple-600">4.2 min</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Audience Demographics */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-gray-200 mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Our Audience Demographics</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center p-6 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl">
+                  <div className="text-3xl font-bold text-indigo-600 mb-2">25-45</div>
+                  <div className="text-gray-700 font-semibold">Primary Age Group</div>
+                  <div className="text-gray-500 text-sm mt-1">Decision makers & professionals</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl">
+                  <div className="text-3xl font-bold text-pink-600 mb-2">60/40</div>
+                  <div className="text-gray-700 font-semibold">Gender Split</div>
+                  <div className="text-gray-500 text-sm mt-1">Male/Female ratio</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl">
+                  <div className="text-3xl font-bold text-teal-600 mb-2">Urban</div>
+                  <div className="text-gray-700 font-semibold">Primary Location</div>
+                  <div className="text-gray-500 text-sm mt-1">Kigali & major cities</div>
+                </div>
+                <div className="text-center p-6 bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl">
+                  <div className="text-3xl font-bold text-amber-600 mb-2">85%</div>
+                  <div className="text-gray-700 font-semibold">Kinyarwanda</div>
+                  <div className="text-gray-500 text-sm mt-1">Native language speakers</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Success Stories */}
+            <div className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 rounded-3xl shadow-2xl p-10 text-white relative overflow-hidden">
+              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold mb-8 text-center">Why Choose Kigali Today Ltd?</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">🏆</span>
+                    </div>
+                    <h4 className="text-xl font-bold mb-3">Proven Track Record</h4>
+                    <p className="text-white/90">15+ years of successful media partnerships and campaign management</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">📡</span>
+                    </div>
+                    <h4 className="text-xl font-bold mb-3">Unmatched Reach</h4>
+                    <p className="text-white/90">80% national coverage through radio, print, and digital platforms</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white text-2xl">🤝</span>
+                    </div>
+                    <h4 className="text-xl font-bold mb-3">Trusted Partner</h4>
+                    <p className="text-white/90">2000+ successful partnerships with leading brands and organizations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Partner with Rwanda's Leading Media Platform?</h3>
+              <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Join thousands of successful brands who trust Kigali Today Ltd for their media partnership needs. 
+                Let's create something amazing together.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  onClick={() => setShowNewPartnershipModal(true)}
+                  className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
+                  Start Your Partnership
+                </button>
+                <Link
+                  href="/advertising"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl text-center"
+                >
+                  Explore Advertising Options
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Analytics Tab */}
         {activeTab === 'analytics' && (
