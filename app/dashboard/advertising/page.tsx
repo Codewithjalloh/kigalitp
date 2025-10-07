@@ -535,19 +535,6 @@ export default function AdvertisingDashboard() {
               </span>
             </button>
             <button
-              onClick={() => setActiveTab('analytics')}
-              className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
-                activeTab === 'analytics'
-                  ? 'border-blue-500 text-blue-600 bg-blue-50'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
-              }`}
-            >
-              <span className="flex items-center space-x-2">
-                <span>📈</span>
-                <span>Analytics</span>
-              </span>
-            </button>
-            <button
               onClick={() => setActiveTab('packages')}
               className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
                 activeTab === 'packages'
@@ -558,6 +545,19 @@ export default function AdvertisingDashboard() {
               <span className="flex items-center space-x-2">
                 <span>💰</span>
                 <span>Packages</span>
+              </span>
+            </button>
+            <button
+              onClick={() => setActiveTab('analytics')}
+              className={`py-4 px-6 border-b-2 font-semibold text-sm transition-all duration-200 rounded-t-lg ${
+                activeTab === 'analytics'
+                  ? 'border-blue-500 text-blue-600 bg-blue-50'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+              <span className="flex items-center space-x-2">
+                <span>📈</span>
+                <span>Analytics</span>
               </span>
             </button>
             <button
